@@ -257,3 +257,8 @@ function getCurrentLink() {
     return returnVar;
   }
 }
+
+const accBtn = document.getElementById("account-btn");
+accBtn.href = getCurrentLink() + "/signin.html";
+document.getElementById("sign-in-btn").href = getCurrentLink() + "/signin.html";
+document.getElementById("sign-up-btn").href = getCurrentLink() + "/signup.html";
