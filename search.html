@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang chủ - Gravestone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#"><h3>Gravestone</h3></a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search" id="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                name="searchInput"
+                id="searchInput"
+                required
+              />
+              <button class="btn btn-outline-success" type="submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="icn">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/signin.html"
+                    id="account-btn"
+                    >Đăng Kí/Đăng Nhập</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Kết quả tìm kiếm</h1>
+      <div class="articles-container" id="search-results-container">
+        <iframe
+          src="https://loading-screen.github.io/"
+          title="placehold"
+          class="placehold"
+          id="placehold-iframe"
+          style="width: 100vw; height: 25rem"
+        ></iframe>
+      </div>
+    </main>
+
+    <footer class="text-bg-dark text-center">
+      <div class="container text-center">
+        <div
+          class="row align-items-start"
+          style="line-height: normal; text-align: left"
+        >
+          <!-- Support -->
+          <div class="col">
+            <h5>Hỗ trợ người dùng</h5>
+            <p>Trung tâm trợ giúp: 1900.1313</p>
+            <p>Báo cáo nội dung: 1800.1314</p>
+
+            <h5>Nhận thông báo mới</h5>
+            <form action="" class="deal-signup">
+              <label><p>Email</p></label>
+              <input type="email" placeholder="Email của bạn" required />
+              <br />
+
+              <label><p>Tên người dùng</p></label>
+              <input
+                type="text"
+                placeholder="Tên người dùng Gravestone"
+                required
+              />
+
+              <p></p>
+
+              <div class="checkbox-box">
+                <input type="checkbox" name="TOS" id="TOS" required />
+                <label for="TOS">
+                  <i>Tôi đồng ý với Điều khoản sử dụng của Gravestone</i>
+                </label>
+              </div>
+
+              <p></p>
+
+              <button type="submit" class="sign">Đăng ký</button>
+            </form>
+          </div>
+
+          <!-- Policies -->
+          <div class="col text-center">
+            <h5>Thông tin & Chính sách</h5>
+            <p>Điều khoản sử dụng</p>
+            <p>Nguyên tắc cộng đồng</p>
+            <p>Chính sách quyền riêng tư</p>
+            <p>Quy định đánh giá bài viết</p>
+            <p>Chính sách chống spam</p>
+            <p>Quy trình xử lý báo cáo</p>
+            <p>Câu hỏi thường gặp (FAQ)</p>
+            <p>Chính sách dữ liệu người dùng</p>
+            <p>Quy định về nội dung do người dùng tạo</p>
+            <p>Quyền sở hữu trí tuệ</p>
+            <p>Thông tin minh bạch nền tảng</p>
+            <p>Hướng dẫn dành cho người mới</p>
+          </div>
+
+          <!-- Social -->
+          <div class="col text-center">
+            <h5>Kết nối với Gravestone</h5>
+
+            <div class="contacts">
+              <a href="#" target="_blank">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                  alt="YouTube"
+                  class="icon"
+                />
+              </a>
+
+              <a href="#" target="_blank">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/250px-Facebook_f_logo_%282019%29.svg.png"
+                  alt="Facebook"
+                  class="icon"
+                />
+              </a>
+
+              <a href="#" target="_blank">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/960px-X_icon.svg.png"
+                  alt="X"
+                  class="icon"
+                />
+              </a>
+            </div>
+
+            <h5>Cộng đồng & Dịch vụ</h5>
+            <p>Bảng xếp hạng bài viết</p>
+            <p>Người đánh giá hàng đầu</p>
+            <p>Chương trình cộng tác viên</p>
+            <p>API dành cho nhà phát triển</p>
+            <p>Blog Gravestone</p>
+            <p>Liên hệ hợp tác</p>
+            <p>Tuyển dụng</p>
+            <p>Máy chủ Discord cộng đồng</p>
+          </div>
+        </div>
+      </div>
+
+      <p></p>
+      <div class="divider w-100"></div>
+      <p></p>
+
+      <b>&copy; Gravestone 2026. Mọi quyền được bảo lưu.</b>
+
+      <p>Email: support@gravestone.social</p>
+
+      <p>
+        Gravestone là nền tảng đánh giá, thảo luận và khám phá các bài viết
+        Wikipedia từ cộng đồng người dùng trên toàn thế giới.
+      </p>
+
+      <p>Không liên kết chính thức với Wikimedia Foundation hoặc Wikipedia.</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
