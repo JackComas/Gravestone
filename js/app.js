@@ -93,7 +93,7 @@ async function createArticleCard(title, desc, thumbnail, pageid, note = "") {
             <p class="card-text article-desc">
               ${desc}
             </p>
-            <a href="${getCurrentLink()}?pageid=${pageid}" class="btn btn-primary read-btn">Read!</a>
+            <a href="${getCurrentLink()}/page.html?pageid=${pageid}" class="btn btn-primary read-btn">Read!</a>
           </div>`;
   } else {
     card.innerHTML = `<img
