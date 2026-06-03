@@ -38,7 +38,6 @@ function getArticleFromID(id) {
   url =
     "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=categories%7Cdescription&origin=*&formatversion=2&pageids=" +
     id.toString();
-  console.log(url);
   return fetch(url)
     .then((response) => {
       return response.json();
@@ -72,7 +71,6 @@ function searchFunction(query) {
     })
     .then((data) => {
       pages = data.query.search;
-      console.log(pages);
       return pages;
     });
 }
@@ -93,7 +91,7 @@ async function createArticleCard(title, desc, thumbnail, pageid, note = "") {
             <p class="card-text article-desc">
               ${desc}
             </p>
-            <a href="${getCurrentLink()}/page.html?pageid=${pageid}" class="btn btn-primary read-btn">Read!</a>
+            <a href="${getCurrentLink()}/page.html?pageid=${pageid}" class="btn btn-primary read-btn">Read</a>
           </div>`;
   } else {
     card.innerHTML = `<img
@@ -109,7 +107,7 @@ async function createArticleCard(title, desc, thumbnail, pageid, note = "") {
             <p class="card-text article-desc">
               ${desc}
             </p>
-            <a href="${getCurrentLink()}?pageid=${pageid}" class="btn btn-primary read-btn">Read!</a>
+            <a href="${getCurrentLink()}/page.html?pageid=${pageid}" class="btn btn-primary read-btn">Read</a>
           </div>`;
   }
 
@@ -118,7 +116,6 @@ async function createArticleCard(title, desc, thumbnail, pageid, note = "") {
 
 async function loadRandomArticles() {
   const article_list = await getMultipleRandomArticle();
-  console.log(article_list);
   const placehold = document.getElementById("placehold-iframe-random");
   for (let i = 0; i < 20; i++) {
     article = article_list[i];
@@ -139,7 +136,6 @@ async function loadRandomArticles() {
 
 async function loadFeaturedArticles() {
   const article_list = await getFeaturedArticles();
-  console.log(article_list);
   const placehold = document.getElementById("placehold-iframe-featured");
   for (let i = 0; i < 20; i++) {
     article = article_list[i];
@@ -160,7 +156,6 @@ async function loadFeaturedArticles() {
 
 async function loadTodayArticles() {
   const event_list = await getTodayArticles();
-  console.log(event_list);
   const placehold = document.getElementById("placehold-iframe-today");
   for (let i = 0; i < event_list.length; i++) {
     event = event_list[i];
@@ -183,7 +178,6 @@ async function loadQueryArticles() {
   const params = await new URLSearchParams(window.location.search);
   const query = await params.get("query");
   const article_list = await searchFunction(query);
-  console.log(article_list);
   const placehold = document.getElementById("placehold-iframe");
   searchResultContainer.innerHTML = "";
   for (let i = 0; i < 20; i++) {
@@ -229,7 +223,7 @@ if (searchForm != null) {
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     searchquery = searchForm.searchInput;
-    window.location.href = `./search.html?query=${searchquery.value}`;
+    window.location.href = `${getCurrentLink()}/search.html?query=${searchquery.value}`;
   });
 }
 
@@ -250,7 +244,6 @@ function getCurrentLink() {
   } else {
     returnVar = URLParts.join("/");
   }
-  console.log(returnVar[returnVar.length - 1] == "/");
   if (returnVar[returnVar.length - 1] == "/") {
     return returnVar.slice(0, returnVar.length - 1);
   } else {
@@ -258,7 +251,29 @@ function getCurrentLink() {
   }
 }
 
-const accBtn = document.getElementById("account-btn");
-accBtn.href = getCurrentLink() + "/signin.html";
-document.getElementById("sign-in-btn").href = getCurrentLink() + "/signin.html";
-document.getElementById("sign-up-btn").href = getCurrentLink() + "/signup.html";
+if (document.getElementById("account-btn") != null) {
+  document.getElementById("account-btn").href =
+    getCurrentLink() + "/signin.html";
+}
+
+if (document.getElementById("sign-in-btn") != null) {
+  document.getElementById("sign-in-btn").href =
+    getCurrentLink() + "/signin.html";
+}
+if (document.getElementById("sign-up-btn") != null) {
+  document.getElementById("sign-up-btn").href =
+    getCurrentLink() + "/signup.html";
+}
+
+function NumberToStars(num) {
+  stars = Math.round(num * 2) / 2;
+  a = "★★★⯪☆";
+  emptyStars = ["☆", "☆", "☆", "☆", "☆"];
+  converted =
+    "★".repeat(stars - (stars % 1)) +
+    "⯪".repeat(Math.round((stars % 1) + 0.49));
+  while (converted.length < 5) {
+    converted += "☆";
+  }
+  return converted;
+}

@@ -96,7 +96,7 @@ async function mainPageFunctions() {
   console.log(article);
   articleIframe.src = `https://en.wikipedia.org/wiki/${article.title}`;
   document.title = `${article.title} - Gravestone`;
-  catergoryContainer = document.getElementById("categorized-article-container");
+  categoryContainer = document.getElementById("categorized-article-container");
   catList = article.categories;
 
   loadCategorizedArticles(catList, pageid);
@@ -123,10 +123,10 @@ async function loadCategorizedArticles(catList, originalPageId) {
           article.pageid,
           cat.slice(9),
         );
-        catergoryContainer.appendChild(card);
+        categoryContainer.appendChild(card);
       }
     }
   }
 
-  catergoryContainer.removeChild(placehold);
+  categoryContainer.removeChild(placehold);
 }
