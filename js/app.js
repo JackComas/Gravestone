@@ -117,7 +117,6 @@ async function createArticleCard(title, desc, thumbnail, pageid, note = "") {
 async function loadRandomArticles() {
   const article_list = await getMultipleRandomArticle();
   const placehold = document.getElementById("placehold-iframe-random");
-  placehold.src = `${getCurrentLink()}/loading.html`;
   for (let i = 0; i < 20; i++) {
     article = article_list[i];
     thumbnail =
@@ -277,4 +276,9 @@ function NumberToStars(num) {
     converted += "☆";
   }
   return converted;
+}
+
+placeholders = document.querySelectorAll(".placehold");
+for (let i = 0; i < placeholders.length; i++) {
+  placeholders[i].src = `${getCurrentLink()}/loading.html`;
 }
