@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   updateProfile,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
 
 import {
@@ -26,6 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
+
+      const username = user.displayName;
+      const email = user.email;
+      console.log(user, username, email);
+
+      setDoc(
+        doc(db, "users", user.uid),
+        {
+          username: username,
+          email: email,
+        },
+        { merge: true },
+      );
+
       setDoc(
         doc(db, "users", user.uid),
         {
@@ -50,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const { user } = userCredentials;
       form.reset();
       alert("Logged In Successfully!");
+      window.location.href = `${getCurrentLink()}/index.html`;
     } catch (error) {
       console.log("loi dang ki", error);
       let message = "dki that bai";
