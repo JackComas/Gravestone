@@ -81,7 +81,107 @@
       </nav>
     </header>
 
-    <main></main>
+    <main class="container py-5">
+      <div class="row g-4">
+        <!-- Profile Card -->
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-body text-center">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                alt="Profile"
+                class="rounded-circle mb-3"
+                width="120"
+              />
+
+              <h3 id="username">Username</h3>
+              <p class="text-muted">@gravestone_user</p>
+
+              <hr />
+
+              <div class="row text-center">
+                <div class="col">
+                  <h5>42</h5>
+                  <small>Reviews</small>
+                </div>
+
+                <div class="col">
+                  <h5>1.2k</h5>
+                  <small>Likes</small>
+                </div>
+
+                <div class="col">
+                  <h5>87</h5>
+                  <small>Following</small>
+                </div>
+              </div>
+
+              <hr />
+
+              <!-- <span class="badge bg-success">Trusted Reviewer</span> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="col-lg-8">
+          <!-- Overview -->
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h4>Dashboard Overview</h4>
+
+              <div class="row mt-4">
+                <div class="col-md-4 mb-3">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h2>42</h2>
+                      <p class="mb-0">Reviews Written</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h2>15</h2>
+                      <p class="mb-0">Saved Articles</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h2>1,248</h2>
+                      <p class="mb-0">Received Likes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4>Account Settings</h4>
+
+              <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-outline-primary">
+                  Edit Profile (Non functional)
+                </button>
+
+                <button class="btn btn-outline-secondary">
+                  Change Password (Non functional)
+                </button>
+
+                <button class="btn btn-outline-danger">Sign Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer class="text-bg-dark text-center">
       <div class="container text-center">
