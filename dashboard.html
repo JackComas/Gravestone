@@ -94,8 +94,8 @@
                 width="120"
               />
 
-              <h3 id="username">Username</h3>
-              <p class="text-muted">@gravestone_user</p>
+              <h3 id="username-display">Username</h3>
+              <p class="text-muted" id="user-uid">@gravestone_user</p>
 
               <hr />
 
@@ -103,11 +103,6 @@
                 <div class="col">
                   <h5>42</h5>
                   <small>Reviews</small>
-                </div>
-
-                <div class="col">
-                  <h5>1.2k</h5>
-                  <small>Likes</small>
                 </div>
 
                 <div class="col">
@@ -175,7 +170,9 @@
                   Change Password (Non functional)
                 </button>
 
-                <button class="btn btn-outline-danger">Sign Out</button>
+                <button class="btn btn-outline-danger" id="sign-out-btn">
+                  Sign Out
+                </button>
               </div>
             </div>
           </div>
@@ -307,5 +304,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/app.js"></script>
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/dashboard.js"></script>
   </body>
 </html>
