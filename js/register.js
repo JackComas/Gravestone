@@ -84,3 +84,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function getCurrentLink() {
+  let text = window.location.href;
+  const URLParts = text.split("/");
+  const isHTML = URLParts[URLParts.length - 1].includes(".html");
+
+  let returnVar = "";
+  if (isHTML) {
+    let returnVar = URLParts.slice(0, URLParts.length - 1).join("/");
+  } else {
+    let returnVar = URLParts.join("/");
+  }
+  if (returnVar[returnVar.length - 1] == "/") {
+    return returnVar.slice(0, returnVar.length - 1);
+  } else {
+    return returnVar;
+  }
+}
+
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    alert("You are already signed in!");
+    window.location.href = `${getCurrentLink()}/index.html`;
+  }
+});

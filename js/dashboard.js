@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (signOutBtn != null) {
     signOutBtn.addEventListener("click", async () => {
       await signOut(auth);
-      console.log("Signed out");
+      alert("Signed out successfully!");
       window.location.href = getCurrentLink() + "/index.html";
     });
   }

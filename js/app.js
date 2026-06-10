@@ -234,23 +234,6 @@ if (searchResultContainer != null) {
   loadQueryArticles();
 }
 
-function getCurrentLink() {
-  text = window.location.href;
-  const URLParts = text.split("/");
-  const isHTML = URLParts[URLParts.length - 1].includes(".html");
-
-  if (isHTML) {
-    returnVar = URLParts.slice(0, URLParts.length - 1).join("/");
-  } else {
-    returnVar = URLParts.join("/");
-  }
-  if (returnVar[returnVar.length - 1] == "/") {
-    return returnVar.slice(0, returnVar.length - 1);
-  } else {
-    return returnVar;
-  }
-}
-
 if (document.getElementById("account-btn") != null) {
   document.getElementById("account-btn").href =
     getCurrentLink() + "/signin.html";
@@ -276,6 +259,23 @@ function NumberToStars(num) {
     converted += "☆";
   }
   return converted;
+}
+
+function getCurrentLink() {
+  text = window.location.href;
+  const URLParts = text.split("/");
+  const isHTML = URLParts[URLParts.length - 1].includes(".html");
+
+  if (isHTML) {
+    returnVar = URLParts.slice(0, URLParts.length - 1).join("/");
+  } else {
+    returnVar = URLParts.join("/");
+  }
+  if (returnVar[returnVar.length - 1] == "/") {
+    return returnVar.slice(0, returnVar.length - 1);
+  } else {
+    return returnVar;
+  }
 }
 
 placeholders = document.querySelectorAll(".placehold");
